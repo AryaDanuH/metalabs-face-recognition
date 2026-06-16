@@ -1,38 +1,38 @@
 # Metalabs Face Recognition
 
-An advanced, offline-capable AI Face Recognition Attendance System tailored for laboratory assistants (Aslabs).
+Sistem Absensi Pengenalan Wajah AI (AI Face Recognition) canggih yang dirancang khusus untuk Asisten Laboratorium (Aslab) dan dapat berjalan secara offline.
 
-## 🚀 Features
+## 🚀 Fitur Utama
 
-*   **100% Local AI:** Uses WebGL and TensorFlow.js (via `face-api.js`) to process face recognition entirely within the browser. No images or biometric data are sent to external cloud servers.
-*   **Smart Timeframe Tracking:** Automatically cross-references scanned faces with the current day's schedule. Accurately logs attendance as "On Time", "Late", or rejects scans for Aslabs not scheduled.
-*   **Admin Dashboard:** Comprehensive dashboard for managing Aslabs, assigning shifts, and viewing real-time attendance statistics.
-*   **Auto-Absent Cron:** A built-in pseudo-cron script automatically flags absent Aslabs if they miss their scheduled shifts.
-*   **Excel Export:** One-click CSV export of the entire attendance history logs.
+*   **100% AI Lokal:** Menggunakan WebGL dan TensorFlow.js (via `face-api.js`) untuk memproses pengenalan wajah sepenuhnya di dalam browser. Tidak ada gambar atau data biometrik yang dikirim ke server cloud eksternal.
+*   **Pelacakan Waktu Pintar (Smart Timeframe):** Secara otomatis memeriksa wajah yang dipindai dengan jadwal hari itu. Mencatat kehadiran secara akurat sebagai "On Time" (Tepat Waktu), "Late" (Terlambat), atau menolak pemindaian untuk Aslab yang tidak memiliki jadwal.
+*   **Dashboard Admin:** Dashboard komprehensif untuk mengelola Aslab, mengatur jadwal shift, dan melihat statistik absensi secara real-time.
+*   **Auto-Absent Cron:** Skrip pseudo-cron bawaan yang secara otomatis menandai Aslab menjadi "Absent" (Alpa) jika mereka melewatkan jadwal shift mereka.
+*   **Export ke Excel:** Ekspor seluruh log riwayat absensi ke dalam format CSV hanya dengan satu klik.
 
-## 🛠️ Installation
+## 🛠️ Cara Instalasi
 
-1.  **Clone the Repository:**
+1.  **Clone Repository:**
     ```bash
-    git clone https://github.com/YOUR_USERNAME/metalabs-face-recognition.git
+    git clone https://github.com/AryaDanuH/metalabs-face-recognition.git
     cd metalabs-face-recognition
     ```
-2.  **Database Setup:**
-    *   Create a new MySQL database named `metalabs`.
-    *   Import the provided `database_schema.sql` file to set up the required tables:
+2.  **Setup Database:**
+    *   Buat database MySQL baru dengan nama `metalabs`.
+    *   Import file `database_schema.sql` yang telah disediakan untuk mengatur tabel-tabel yang dibutuhkan:
         ```bash
         mysql -u root -p metalabs < database_schema.sql
         ```
-3.  **Configuration:**
-    *   Ensure your web server (e.g., XAMPP, Apache) points to the cloned directory.
-    *   If your database credentials differ from the default (`root` / empty password), update the `api/db.php` file.
-4.  **Run:**
-    *   Access the application via your local server (e.g., `http://localhost/metalabs`).
+3.  **Konfigurasi:**
+    *   Pastikan web server Anda (contoh: XAMPP, Apache) mengarah ke direktori yang baru saja di-clone.
+    *   Jika kredensial database Anda berbeda dari default (user: `root` / password kosong), silakan perbarui file `api/db.php`.
+4.  **Jalankan Aplikasi:**
+    *   Akses aplikasi melalui server lokal Anda (contoh: `http://localhost/metalabs`).
 
-## 🛡️ Privacy & Security
+## 🛡️ Privasi & Keamanan
 
-This system was specifically designed to handle sensitive biometric data responsibly. Face descriptors (mathematical arrays representing facial features) are calculated locally and stored securely in the MySQL database. Actual video feeds and images from the Live Scanner are discarded immediately and never saved or transmitted.
+Sistem ini dirancang khusus untuk menangani data biometrik sensitif secara bertanggung jawab. Face descriptors (array matematis yang merepresentasikan fitur wajah) dihitung secara lokal dan disimpan dengan aman di dalam database MySQL. Rekaman video dan gambar asli dari Live Scanner akan langsung dihapus dan tidak pernah disimpan atau ditransmisikan kemana pun.
 
-## 📄 License
+## 📄 Lisensi
 
-This project is open-source and available under the [MIT License](LICENSE).
+Proyek ini bersifat open-source dan tersedia di bawah [MIT License](LICENSE).
